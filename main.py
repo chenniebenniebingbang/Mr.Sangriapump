@@ -17,9 +17,9 @@ sensor = Pin(16, Pin.IN)
 relay = Pin(27, Pin.OUT)
 sangria = 10  # how much sangria we are starting with
 flowrate = 0.3  # set liters per second for the pump flow rate
-pumptime = 3  # how many seconds the pump is on
-status = False
-
+pumptime = 1  # how many seconds the pump is on
+status = False 
+ 
 # Callback Function to respond to messages from Adafruit IO
 def sub_cb(topic, msg):  # sub_cb means "callback subroutine"
     print((topic, msg))  # Outputs the message that was received. Debugging use.
@@ -83,7 +83,7 @@ except KeyboardInterrupt:
     print("Keyboard interrupt")
 
 # Use the MQTT protocol to connect to Adafruit IO
-client = MQTTClient(
+client = MQTTClient(  
     keys.AIO_CLIENT_ID, keys.AIO_SERVER, keys.AIO_PORT, keys.AIO_USER, keys.AIO_KEY
 )
 
